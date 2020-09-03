@@ -1,0 +1,27 @@
+#error404{
+    background: url(../img/404-error-design-with-box_23-2147733484.jpg) no-repeat right center;
+    height: calc(100vh - 56px);
+    display: block;
+    position: relative;
+    background-size: 626px 626px;
+}
+#error404 h1{
+    font-size: 8rem;
+    margin-top: 2rem;
+}
+
+
+.form{
+    align-content: center;
+}
+
+body{
+    background-image: url(https://media-exp1.licdn.com/dms/image/C4D1BAQGJH3oVZgtvJA/company-background_10000/0?e=2159024400&v=beta&t=3MNBmboI8PTFoL3aj8YpmGK5GmxJKiRmARu-8ytJaU8);
+}
+
+.container{
+    padding: 100px 5px 5px 5px;
+    height: 200px;
+    opacity: 30%;
+    background-color: white;
+}
