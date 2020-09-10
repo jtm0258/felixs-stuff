@@ -2,12 +2,25 @@
 {% block main %}
 <div action="/login" class="container">
     <h1 style="text-align: center;">Login</h1>
-    <div class="form" style="text-align: center;">
-        <form id="form_somebody_once_told_me_the_world_is_gonna_roll_me,_i_aint_the_sharpest_tool_in_the_shed...she_was_looking_kinda_dumb_with_her_finger_and_her_thumb_in_the_shape_of_an_L_on_her_forehead">
-            <input type="text" placeholder="username"><br><br>
-            <input type="text" placeholder="email"><br><br>
-            <input type="text" placeholder="password"><br><br>
-        </form>
-    </div>
+    <form method="POST" action="/login"> 
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for message in messages %}
+                <p>{{ message }}</p>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+        <!--This is Where Username and Password inputs and Auth-->
+        <div class="form-group"> <!--Username-->
+            <label for="email">Email:</label><br>
+            <input type="text" class="form-control"  placeholder="Email" name="email">
+        </div>
+        <div class="form-group"> <!--Password-->
+            <label for="password">Password:</label><br>
+            <input type="password" class="form-control"  placeholder="Password" name="password">
+        </div>
+        <input type="submit" value="Submit" class="btn btn-primary"> <!--Submit Button-->
+    </form>
+
 </div>
 {% endblock %}

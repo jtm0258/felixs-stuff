@@ -3,14 +3,30 @@
  <div class="container">
     <h1 style="text-align: center;">Register</h1><br>
     <div class="form" style="text-align: center;">
-        <form action="/register" id="formything" style="padding-left: 3rem;" method="POST">
-            <input placeholder="first name" type="text"><br><br>
-            <input placeholder="last name" type="text"><br><br>
-            <input type="email" id="email" name="email" placeholder="email address"><br><br>
-            <input type="text" id="password" name="password" placeholder="password"><br><br>
-            <input type="text" id="passwordc" name="password_confirm" placeholder="confirm password"><br><br>
-            <input type="submit" value="Submit"></form>
-        </form><br>
+        <form method="POST" action="/register">
+            <h1 class="title"></h1>
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    {% for message in messages %}
+                    <p>{{ message }}</p>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+            <div class="form-group">
+                <input type="email" class="form-control" aria-describedby="emailHelp" placeholder="Enter email" name="email">
+                <small id="emailHelp" class="form-text text-muted">We will sell your email to corporations for money and blowjobs, email us to see how much we are selling you for</small>
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control"  placeholder="Username" name="username">
+            </div>
+            <div class="form-group">
+                <input type="password" class="form-control"  placeholder="Password" name="password">
+            </div>
+            <div class="form-group">
+                <input type="password" class="form-control" placeholder="Confirm password" name="password_confirm">
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
         <a href="/login" style="text-align:center;">already have an account?</a>
     </div>
 </div>

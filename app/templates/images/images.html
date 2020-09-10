@@ -1,0 +1,32 @@
+
+    {% extends "base.html" %}
+    {% block main %}
+    <div id="images" class="container-fluid">
+		<div class="row">
+			<div class="col">
+				<h2>My Images</h2>
+				{% with messages = get_flashed_messages() %}
+					{# Handle messages here #}
+				{% endwith %}
+				{% if images %}
+					<div class="grid">
+					{% for image_object in images.each() %}
+						{% with image = image_object.val() %}
+						<div class="grid-item">
+							<div class="card" style="width: 18rem;">
+								<img src="{{ image.upload_location }}" alt="{{ image.description }}">
+								<div class="card-body">
+								  <h5 class="card-title">{{ image.name }}</h5>
+								  <p class="card-text">{{ image.description }}</p>
+								  <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" class="btn btn-primary">Go somewhere</a>
+								</div>
+							  </div>
+						</div>
+						{% endwith %}
+					{% endfor %}
+					</div>
+				{% endif %}
+			</div>
+		</div>
+    </div>
+    {% endblock %}

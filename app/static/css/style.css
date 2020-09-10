@@ -9,8 +9,6 @@
     font-size: 8rem;
     margin-top: 2rem;
 }
-
-
 .form{
     align-content: center;
 }
@@ -23,4 +21,25 @@ body{
     padding: 100px 5px 5px 5px;
     height: 200px;
     background-color: white;
+}
+
+.form-control{
+    width: 500px;
+    text-align: center;
+    align-content: center;
+    display: inline-block;
+    margin-inline: 10px;
+}
+
+.text-center{
+    padding-left: 350px;
+}    
+.grid-item{
+    width: calc(33.3333% - 30px);
+    float: left;
+    margin-bottom: 30px;
+}
+.grid-item img{
+    width: 100%;
+    height: auto;
 }

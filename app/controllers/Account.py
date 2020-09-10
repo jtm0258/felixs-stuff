@@ -4,7 +4,7 @@ from app.models.Account import Account
 
 bp = Blueprint('account', __name__, url_prefix='', static_folder='../static')
 
-@bp.route('/register', methods=('GET', 'POST'))
+@bp.route('/register', methods=['GET', 'POST'])
 def register():
     """ 
     Registration controller. 
@@ -52,7 +52,7 @@ def login():
 
     return render_template('account/login.html')
     
-@bp.route('/profile', methods=('GET', 'POST'))
+@bp.route('/profile', methods=['GET', 'POST'])
 def profile():
 
     if request.method == 'POST':
