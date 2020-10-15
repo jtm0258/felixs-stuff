@@ -1,7 +1,10 @@
 {% extends "base.html" %}
 {% block main %}
-<div action="/login" class="container">
-    <h1 style="text-align: center;">Login</h1>
+<div class="container" style="background-color:#cb252c ;">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <div action="/login" class="container" style="background-color:#cb252c ;" style="opacity: 50%;">
+    <h1 style="text-align: center;" >Login</h1>
     <form method="POST" action="/login"> 
         {% with messages = get_flashed_messages() %}
             {% if messages %}
@@ -22,5 +25,7 @@
         <input type="submit" value="Submit" class="btn btn-primary"> <!--Submit Button-->
     </form>
 
+        </div>
+    </div>
 </div>
 {% endblock %}

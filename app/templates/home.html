@@ -1,4 +1,21 @@
     {% extends "base.html" %}
     {% block main %}
-      <h1>Welcome To MyApp</h1>
+      <div class="container" style="background-color:#cb252c ;">
+        <div class="row">
+          <div class="col-md-6 offset-md-3">
+           <h1>welcome to Привет Мир</h1>
+          </div>
+        </div>
+      </div>
+      {% if images %}
+            <div class="grid">
+                {% for image_object in images.each() %}
+                    {% with image = image_object.val() %}
+                    <div class="grid-item" data-image="{{ image|tojson }}">
+                        <img src="{{ image.upload_location }}" alt="{{ image.description }}">
+                    </div>
+                    {% endwith %}
+                {% endfor %}
+                </div>
+            {% endif %}
     {% endblock %}

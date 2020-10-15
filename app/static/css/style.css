@@ -43,3 +43,27 @@ body{
     width: 100%;
     height: auto;
 }
+
+body {
+    background-image: url(../img/background_img.jpg); 
+    background-color: #cb252c; /* Used if the image is unavailable */
+    height: 500px; /* You must set a specified height */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */
+}
+
+.modal-content img{
+    width: 100%;
+    height: auto;
+}
+
+.fa.fa-times{
+    float: right;
+}
+
+.WORKGODDAMIT{
+    align-content: center;
+    width: 600px;
+    height: auto;
+}
