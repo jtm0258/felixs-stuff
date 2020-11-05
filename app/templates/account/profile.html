@@ -10,6 +10,9 @@
         <form method="POST" action="/profile" enctype="multipart/form-data"> 
             <h1>Update Your Profile</h1>
             {% with messages = get_flashed_messages() %}
+						{# Handle messages here #}
+					{% endwith %}
+            {% with messages = get_flashed_messages() %}
                 {% if messages %}
                     {% for message in messages %}
                     <p>{{ message }}</p>
@@ -17,24 +20,23 @@
                 {% endif %}
             {% endwith %}
             <!--This is Where Username and Password inputs and Auth-->
-            <div class="form-group"> <!--FirstName-->
-                <label for="firstname">First Name:</label>
-                <input type="text" lass="form-control"  placeholder="First_Name" name="firstname">
-            </div>
-            <div class="form-group"> <!--LastName-->
-                <label for="lastname">Last Name:</label>
-                <input type="text" lass="form-control"  placeholder="Last_Name" name="lastname">
-            </div>
-            <div class="form-group"> <!--Password-->
-                <label for="passwordchange">Password:</label>
-                <input type="password" class="form-control"  placeholder="Passwordchange" name="passwordchange">
-            </div>
-            <div class="form-group"> <!--Avatar-->
-                <label for="avatar">Avatar:</label>
-                <input type="file" name="avatar" class="form-control"  placeholder="avatar">
-            </div>
-
-            <input type="submit" value="Submit" class="btn btn-primary"> <!--Submit Button-->
+            <div class="form-group">
+                <label>First name</label>
+                <input type="text" name="firstname" class="form-control" value="{{ session['user']['first_name'] }}" placeholder="First name">
+              </div>
+              <div class="form-group">
+                <label>Last name</label>
+                <input type="text" name="lastname" class="form-control" value="{{ session['user']['last_name'] }}" placeholder="Last name">
+              </div>
+              <div class="form-group">
+                <input type="file" name="avatar"/>
+              </div>
+              {% if session['user']['avatar'] %}
+              <div id="avatar">
+                <img class="size" src="{{ session['user']['avatar'] }}" alt="Your Profile Image">
+              </div>
+              {% endif %}
+              <button type="submit" class="btn btn-primary">Save</button>
         </form>
     </div>
     <div class="col-3"></div>
